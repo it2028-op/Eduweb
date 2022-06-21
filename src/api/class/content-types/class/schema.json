@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classes",
+  "info": {
+    "singularName": "class",
+    "pluralName": "classes",
+    "displayName": "class",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "namelat": {
+      "type": "string",
+      "required": true
+    },
+    "def": {
+      "type": "richtext",
+      "required": false
+    },
+    "pic": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "trunk": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::trunk.trunk",
+      "inversedBy": "classes"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "class"
+    }
+  }
+}

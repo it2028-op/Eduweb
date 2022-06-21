@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trunks",
+  "info": {
+    "singularName": "trunk",
+    "pluralName": "trunks",
+    "displayName": "Trunk",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "namelat": {
+      "type": "string",
+      "required": true
+    },
+    "desc": {
+      "type": "richtext",
+      "required": false
+    },
+    "pic": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "classes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::class.class",
+      "mappedBy": "trunk"
+    },
+    "realm": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::realm.realm",
+      "inversedBy": "trunks"
+    }
+  }
+}

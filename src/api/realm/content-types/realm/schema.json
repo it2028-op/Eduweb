@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "realms",
+  "info": {
+    "singularName": "realm",
+    "pluralName": "realms",
+    "displayName": "Realm",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "namelat": {
+      "type": "string",
+      "required": true
+    },
+    "definition": {
+      "type": "richtext"
+    },
+    "pic": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "trunks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::trunk.trunk",
+      "mappedBy": "realm"
+    }
+  }
+}

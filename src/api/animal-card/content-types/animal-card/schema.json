@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "animal_cards",
+  "info": {
+    "singularName": "animal-card",
+    "pluralName": "animal-cards",
+    "displayName": "AnimalCard",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "namelat": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "pic": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "livearea": {
+      "type": "text",
+      "required": true
+    },
+    "lastactualisation": {
+      "type": "date",
+      "required": true
+    },
+    "clan": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::clan.clan",
+      "inversedBy": "animal_cards"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clans",
+  "info": {
+    "singularName": "clan",
+    "pluralName": "clans",
+    "displayName": "Clan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "namelat": {
+      "type": "string",
+      "required": true
+    },
+    "def": {
+      "type": "richtext"
+    },
+    "pic": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "family": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::family.family",
+      "inversedBy": "clans"
+    },
+    "animal_cards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::animal-card.animal-card",
+      "mappedBy": "clan"
+    }
+  }
+}
